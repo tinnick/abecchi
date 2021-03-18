@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { RandomImageService } from "../../services/random-image.service";
 
 @Component({
@@ -7,16 +7,26 @@ import { RandomImageService } from "../../services/random-image.service";
   styleUrls: ["./top-page.component.css"]
 })
 export class TopPageComponent implements OnInit {
-  @ViewChild("imagesContainer", { static: true })
-  private imageContainer: TemplateRef<HTMLDivElement>;
+  @ViewChild("imageContainer", { static: true })
+  private imageContainer: ElementRef<HTMLDivElement>;
+
+  public images: HTMLImageElement[];
+  public imageUrls: string[];
+  public readonly imagesCount = 10;
 
   constructor(private readonly randomImageService: RandomImageService) {}
 
   public ngOnInit(): void {
-    const images = this.randomImageService.loadedImages(6);
+    /*
+    this.randomImageService.loadImages(this.imagesCount).subscribe(images => {
+      this.images = images;
 
-    images.forEach(imageEl =>
-      this.imageContainer.nativeElement.appendChild(imageEl)
-    );
+      this.images.forEach(imageEl => { this.imageContainer.nativeElement.innerHTML += imageEl.outerHTML; });
+    });
+    */
+
+    this.randomImageService.getImageList(this.imagesCount).subscribe(urls => {
+      this.imageUrls = urls;
+    });
   }
 }

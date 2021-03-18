@@ -3,9 +3,9 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { TopPageComponent } from "./components";
 
-const routes: Routes[{
-  path: "";
-  component: TopPageComponent;
+const routes: Routes = [{
+  path: "",
+  component: TopPageComponent
 }];
 
 @NgModule({

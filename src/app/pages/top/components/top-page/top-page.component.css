@@ -1,6 +1,6 @@
 .top-page {
   width: 100vw;
-  height: 100vh;
+  padding: 0 30px;
 }
 
 .image-container {
@@ -13,5 +13,13 @@
 }
 
 .image-container img:hover {
-  transform: translate(-50%, -50%);
+  transform: translate(-5%, -5%);
+}
+
+.abecchi-random-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.abecchi-random-image:hover {
+  transform: translate(-5%, -5%);
 }

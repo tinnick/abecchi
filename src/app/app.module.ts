@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -9,7 +10,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared";
 import { AboutPageComponent } from "./pages";
 
-const COMPONENTS: any[] = [AppCompoent, AboutPageComponent];
+const COMPONENTS: any[] = [AppComponent, AboutPageComponent];
 
 @NgModule({
   imports: [

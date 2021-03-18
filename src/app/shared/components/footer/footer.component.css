@@ -1,0 +1,12 @@
+.abecchi-header {
+  height: 40px;
+  width: 100vw;
+  display: inline-flex;
+  align-items: center;
+  background-color: #1A237E;
+}
+
+.abecchi-header a {
+  margin: 0 2rem;
+  color: #CFD8DC;
+}

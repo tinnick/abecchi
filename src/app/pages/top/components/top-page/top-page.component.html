@@ -1,3 +1,9 @@
 <main class="top-page">
-  <div #imageContainer class="image-container"></div>
+  <div #imageContainer class="image-container">
+
+    <ng-container *ngFor="let imageUrl of imageUrls">
+      <img class="abecchi-random-image" [src]="imageUrl" [alt]="imageUrl">
+    </ng-container>
+
+  </div>
 </main>
