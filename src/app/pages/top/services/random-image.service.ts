@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
-import { map, take, switchMap } from 'rxjs/operators';
+import { map, take, filter } from 'rxjs/operators';
 
 
 export interface IRandomImageListItem {
@@ -63,9 +63,21 @@ export class RandomImageService {
     return of(image);
   }
 
-  public getImageList(amount: number, width: number = this.defaultImageWidth, height: number = this.defaultImageHeight): Observable<string[]> {
+  public getImageList(
+    amount: number,
+    width: number = this.defaultImageWidth,
+    height: number = this.defaultImageHeight
+  ): Observable<string[]> {
+
     return this.httpClient.get(randomImageApiUrls.byList(amount)).pipe(take(1), map((items: IRandomImageListResponse) => {
       return items.map(({ id }) => randomImageApiUrls.byIdWidthandHeight(id, width, height));
     }));
   }
+
+
+  fun():void {
+    new Observable()
+  }
+
+
 }
