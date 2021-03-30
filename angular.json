@@ -81,6 +81,9 @@
           "configurations": {
             "production": {
               "browserTarget": "abecchi-new:build:production"
+            },
+            "development": {
+              "browserTarget": "abecchi-new:build:development"
             }
           }
         },
